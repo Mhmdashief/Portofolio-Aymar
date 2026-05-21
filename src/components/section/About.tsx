@@ -5,7 +5,20 @@ import AsciiMorphText from '../AsciiMorphText';
 import TypewriterCarousel from '../TypewriterCarousel';
 import { useDarkMode } from '../../contexts/DarkModeContext';
 import { useThemeColors, withAlpha } from '../../hooks/useThemeColors';
-import { aboutMeJournalWebp800, aboutMeJournalWebp400, profile1, profile2, profile3, stickers as stickerImages } from '../../assets';
+import { aboutMeJournalWebp800, aboutMeJournalWebp400, stickers as stickerImages } from '../../assets';
+import aymarAboutUsImg from '../../assets/foto about us aymar.jpeg';
+
+// Import all 10 custom photos added by the user
+import foto1 from '../../assets/foto1.jpeg';
+import foto2 from '../../assets/foto 2.jpeg';
+import foto3 from '../../assets/foto 3.jpeg';
+import foto4 from '../../assets/foto 4.jpeg';
+import foto5 from '../../assets/foto 5.jpeg';
+import foto6 from '../../assets/foto 6.jpeg';
+import foto7 from '../../assets/foto 7.jpeg';
+import foto8 from '../../assets/foto 8.jpeg';
+import foto9 from '../../assets/foto 9.jpeg';
+import foto10 from '../../assets/foto 10.jpeg';
 
 
 const About = () => {
@@ -19,16 +32,22 @@ const About = () => {
   const themeColors = useThemeColors();
 
   const roles = [
-    'Software Engineer',
-    'Full-Stack Developer',
-    'Systems Engineer',
-    'Frontend Developer',
+    'Digital Marketing',
+    'Business Development',
   ];
 
   const profileImages = [
-    { src: profile1, caption: "photo 1" },
-    { src: profile2, caption: "photo 2" },
-    { src: profile3, caption: "photo 3" }
+    { src: aymarAboutUsImg, caption: "Hi, I'm Aymar! ✨" },
+    { src: foto1, caption: "My Activity & Projects 📸" },
+    { src: foto2, caption: "Collaborations & Events 🤝" },
+    { src: foto3, caption: "Business Presentation 📈" },
+    { src: foto4, caption: "Team & Organization 🌟" },
+    { src: foto5, caption: "Learning & Growth 📚" },
+    { src: foto6, caption: "Creative Designs 🎨" },
+    { src: foto7, caption: "Milestones & Achievements 🏆" },
+    { src: foto8, caption: "Digital Marketing Campaign 🚀" },
+    { src: foto9, caption: "Public Speaking & Pitching 🎙️" },
+    { src: foto10, caption: "Daily Inspiration ✨" }
   ];
 
   const fullAsciiArt = `⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -213,11 +232,11 @@ const About = () => {
           <div className="flex flex-col md:flex-row justify-between items-start max-w-6xl mx-auto gap-8">
             <div className="text-left w-full md:w-auto">
               <div className="ascii-container justify-start text-3xl md:text-4xl lg:text-5xl">
-                <AsciiMorphText text="Hi, I'm Your Name" />
+                <AsciiMorphText text="Hi, I'm Aymardayanti Pagril" />
               </div>
               <div className="hero-subtitle justify-start text-base md:text-lg lg:text-xl mt-2">
                 <div className="flex flex-wrap items-center justify-start">
-                  <span className={isDarkMode ? 'hero-subtitle-dark' : 'hero-subtitle-light'}>I am a&nbsp;</span>
+                  <span className={isDarkMode ? 'hero-subtitle-dark' : 'hero-subtitle-light'}>I specialize in&nbsp;</span>
                   <TypewriterCarousel roles={roles} className={isDarkMode ? 'hero-subtitle-dark' : 'hero-subtitle-light'} />
                 </div>
               </div>
@@ -275,26 +294,104 @@ const About = () => {
             </div>
 
             {/* About Me Journal Image */}
-            <div className="w-full md:max-w-2xl lg:max-w-4xl relative z-20 px-1 md:px-0">
-              <picture>
-                <source
-                  srcSet={`${aboutMeJournalWebp400} 400w, ${aboutMeJournalWebp800} 800w`}
-                  sizes="(max-width: 375px) 320px, (max-width: 480px) 400px, (max-width: 768px) 450px, 800px"
-                  type="image/webp"
-                />
-                {/* fallback for browsers that dont support webp */}
-                <img
-                  src={aboutMeJournalWebp400}
-                  alt="Journal page with handwritten personal introduction and interests"
-                  className="w-full h-auto object-contain cursor-pointer hover:opacity-90 transition-opacity"
-                  onClick={() => setShowProfileModal(true)}
-                  width="400"
-                  height="300"
-                  fetchPriority="high"
-                  loading="eager"
-                  style={{ maxWidth: '100%', height: 'auto' }}
-                />
-              </picture>
+            <div className="w-full md:max-w-3xl lg:max-w-4xl relative z-20 px-1 md:px-0">
+              <div className="relative w-full h-auto">
+                <picture>
+                  <source
+                    srcSet={`${aboutMeJournalWebp400} 400w, ${aboutMeJournalWebp800} 800w`}
+                    sizes="(max-width: 375px) 320px, (max-width: 480px) 400px, (max-width: 768px) 450px, 800px"
+                    type="image/webp"
+                  />
+                  {/* fallback for browsers that dont support webp */}
+                  <img
+                    src={aboutMeJournalWebp400}
+                    alt="Journal background"
+                    className="w-full h-auto object-contain select-none pointer-events-none"
+                    width="400"
+                    height="300"
+                    fetchPriority="high"
+                    loading="eager"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
+                </picture>
+
+                {/* Journal Interactive Overlay */}
+                <div
+                  className="absolute inset-0 grid grid-cols-2 w-full h-full"
+                  style={{
+                    padding: '8% 7% 8% 9%', // customized margins to perfectly frame the left and right pages
+                  }}
+                >
+                  {/* Left Page: Polaroid Photo */}
+                  <div className="flex flex-col items-center justify-center h-full p-1 relative">
+                    <div
+                      className="bg-white p-1.5 pb-3 md:p-3 md:pb-6 shadow-md md:shadow-xl rounded-sm transition-transform duration-300 hover:scale-105 cursor-pointer relative"
+                      style={{
+                        transform: 'rotate(-4deg)',
+                        width: '85%',
+                        maxWidth: '220px',
+                        border: '1px solid rgba(0,0,0,0.06)'
+                      }}
+                      onClick={() => setShowProfileModal(true)}
+                    >
+                      {/* Scrapbook Tape effect */}
+                      <div
+                        className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-3.5 md:w-14 md:h-6 bg-pink-200/50 backdrop-blur-[1px] rotate-[-12deg]"
+                        style={{
+                          borderLeft: '1px dashed rgba(0,0,0,0.1)',
+                          borderRight: '1px dashed rgba(0,0,0,0.1)',
+                        }}
+                      />
+
+                      <div className="aspect-[3/4] w-full overflow-hidden bg-gray-100 rounded-sm">
+                        <img
+                          src={aymarAboutUsImg}
+                          alt="Aymardayanti Pagril"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+                      {/* Polaroid Caption */}
+                      <p
+                        className="text-center mt-1 md:mt-2 text-[10px] md:text-sm font-medium text-gray-700 select-none"
+                        style={{ fontFamily: "'DK Crayonista', cursive, sans-serif" }}
+                      >
+                        Me! ✨
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right Page: Bio Data Handwritten Entry */}
+                  <div className="flex flex-col justify-start h-full p-1.5 md:p-4 overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
+                    <h3
+                      className="text-xs xs:text-sm sm:text-base md:text-2xl lg:text-3xl font-bold mb-0.5 md:mb-3 text-left"
+                      style={{
+                        fontFamily: "'DK Crayonista', cursive, sans-serif",
+                        color: '#4A353A'
+                      }}
+                    >
+                      About Me
+                    </h3>
+                    <div
+                      className="text-left text-[9px] xs:text-[11px] sm:text-xs md:text-sm lg:text-base leading-[1.3] xs:leading-relaxed md:leading-loose space-y-1 md:space-y-2.5"
+                      style={{
+                        fontFamily: "'DK Crayonista', cursive, sans-serif",
+                        color: '#5A4247'
+                      }}
+                    >
+                      <p>
+                        Hello, I'm Aymardayanti Pagril, a 4th-semester Business Administration student at Universitas Brawijaya. I have a huge passion for business development, digital marketing, as well as organization and event management. Throughout my college years, I have been actively involved in various organizations, committees, and volunteer activities that help me develop communication, leadership, teamwork, and project management skills. ✨
+                      </p>
+                      <p className="hidden xs:block">
+                        In addition to being active in non-academic activities, I also enjoy participating in various competitions to hone my strategic thinking, creativity, and problem-solving skills. My experience in digital marketing and business development has familiarized me with crafting marketing strategies, building relationships, and understanding market needs and broader business development.
+                      </p>
+                      <p className="hidden md:block">
+                        I believe that the learning process does not only come from the classroom, but also from experiences, challenges, and collaborations. Therefore, I am always open to new opportunities, self-development, and partnerships that can create a positive impact and real contributions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -337,9 +434,8 @@ const About = () => {
                     key={index}
                     src={image.src}
                     alt={`Profile photo ${index + 1}`}
-                    className={`absolute w-full h-full object-contain transition-opacity duration-500 ${
-                      index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`absolute w-full h-full object-contain transition-opacity duration-500 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                      }`}
                     loading="eager"
                     onError={(e) => {
                       console.error('Image failed to load:', image.src);
@@ -383,11 +479,6 @@ const About = () => {
               <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
                 {currentImageIndex + 1} / {profileImages.length}
               </div>
-
-              {/* Caption */}
-              <div className="absolute bottom-4 right-4 bg-black/70 text-white px-4 py-2 rounded-lg text-base font-medium max-w-[220px] text-center">
-                {profileImages[currentImageIndex].caption}
-              </div>
             </div>
 
             {/* Dots Indicator */}
@@ -423,7 +514,7 @@ const About = () => {
             {/* Close Button */}
             <button
               className="absolute top-4 right-4 text-white rounded-full w-11 h-11 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-90"
-              style={{ 
+              style={{
                 backgroundColor: themeColors.colors.pink[500],
                 transition: 'all 0.3s'
               }}

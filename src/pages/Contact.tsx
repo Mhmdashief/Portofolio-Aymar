@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { Mail, Github, Linkedin, Phone, Instagram } from 'lucide-react';
 import { useDarkMode } from '../contexts/DarkModeContext';
 import { useThemeColors } from '../hooks/useThemeColors';
 import Aurora from '../components/ui/aurora';
@@ -26,14 +26,14 @@ const Contact = () => {
           speed={0.3}
         />
       </div>
-      
-      <div className="container mx-auto px-6 max-w-4xl relative z-10">
+
+      <div className="container mx-auto px-6 max-w-5xl relative z-10">
         {/* Back Button */}
-        <BackButton 
-          to="/" 
-          scrollToId="" 
-          label="Back to Home" 
-          ariaLabel="Navigate back to homepage" 
+        <BackButton
+          to="/"
+          scrollToId=""
+          label="Back to Home"
+          ariaLabel="Navigate back to homepage"
         />
 
         {/* Contact Header */}
@@ -44,70 +44,108 @@ const Contact = () => {
         </header>
 
         {/* Contact Cards */}
-        <section className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto" aria-label="Contact methods">
-          
+        <section className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto" aria-label="Contact methods">
+
           {/* Email Card */}
-          <article className="rounded-lg shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300" style={{ backgroundColor: themeColors.card.background }} aria-labelledby="email-heading">
-            <div className="flex justify-center mb-4">
-              <Mail className="h-12 w-12" style={{ color: themeColors.colors.pink[500] }} aria-hidden="true" />
+          <article className="rounded-lg shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300 flex flex-col justify-between" style={{ backgroundColor: themeColors.card.background }} aria-labelledby="email-heading">
+            <div>
+              <div className="flex justify-center mb-4">
+                <Mail className="h-12 w-12" style={{ color: themeColors.colors.pink[500] }} aria-hidden="true" />
+              </div>
+              <h3 id="email-heading" className="text-xl font-semibold mb-2" style={{ color: themeColors.text.primary }}>Email</h3>
             </div>
-            <h3 id="email-heading" className="text-xl font-semibold mb-2" style={{ color: themeColors.text.primary }}>Email</h3>
-            <a 
-              href={`mailto:${socialLinks.email}`}
-              aria-label={`Send email to ${socialLinks.email}`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors hover:opacity-80"
-              style={{
-                backgroundColor: themeColors.interactive.primary,
-                color: themeColors.text.pink
-              }}
-            >
-              Send Email
-            </a>
-            <p className="text-xs mt-3" style={{ color: themeColors.text.tertiary }}>{socialLinks.display.email}</p>
+            <div>
+              <a
+                href={`mailto:${socialLinks.email}`}
+                aria-label={`Send email to ${socialLinks.email}`}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors hover:opacity-80 w-full justify-center"
+                style={{
+                  backgroundColor: themeColors.interactive.primary,
+                  color: themeColors.text.pink
+                }}
+              >
+                Send Email
+              </a>
+              <p className="text-xs mt-3 break-all" style={{ color: themeColors.text.tertiary }}>{socialLinks.display.email}</p>
+            </div>
           </article>
 
-          {/* GitHub Card */}
-          <article className="rounded-lg shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300" style={{ backgroundColor: themeColors.card.background }} aria-labelledby="github-heading">
-            <div className="flex justify-center mb-4">
-              <Github className="h-12 w-12" style={{ color: themeColors.colors.pink[500] }} aria-hidden="true" />
+          {/* WhatsApp & Phone Card */}
+          <article className="rounded-lg shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300 flex flex-col justify-between" style={{ backgroundColor: themeColors.card.background }} aria-labelledby="phone-heading">
+            <div>
+              <div className="flex justify-center mb-4">
+                <Phone className="h-12 w-12" style={{ color: themeColors.colors.pink[500] }} aria-hidden="true" />
+              </div>
+              <h3 id="phone-heading" className="text-xl font-semibold mb-2" style={{ color: themeColors.text.primary }}>WhatsApp</h3>
             </div>
-            <h3 id="github-heading" className="text-xl font-semibold mb-2" style={{ color: themeColors.text.primary }}>GitHub</h3>
-            <a 
-              href={socialLinks.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View GitHub profile at ${socialLinks.display.github} (opens in new tab)`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors hover:opacity-80"
-              style={{
-                backgroundColor: themeColors.interactive.primary,
-                color: themeColors.text.pink
-              }}
-            >
-              View Profile
-            </a>
-            <p className="text-xs mt-3" style={{ color: themeColors.text.tertiary }}>{socialLinks.display.github}</p>
+            <div>
+              <a
+                href="https://wa.me/6287700721012"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat via WhatsApp on +62 877-0072-1012"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors hover:opacity-80 w-full justify-center"
+                style={{
+                  backgroundColor: themeColors.interactive.primary,
+                  color: themeColors.text.pink
+                }}
+              >
+                Chat / Call
+              </a>
+              <p className="text-xs mt-3" style={{ color: themeColors.text.tertiary }}>+62 877-0072-1012</p>
+            </div>
           </article>
 
           {/* LinkedIn Card */}
-          <article className="rounded-lg shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300" style={{ backgroundColor: themeColors.card.background }} aria-labelledby="linkedin-heading">
-            <div className="flex justify-center mb-4">
-              <Linkedin className="h-12 w-12" style={{ color: themeColors.colors.pink[500] }} aria-hidden="true" />
+          <article className="rounded-lg shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300 flex flex-col justify-between" style={{ backgroundColor: themeColors.card.background }} aria-labelledby="linkedin-heading">
+            <div>
+              <div className="flex justify-center mb-4">
+                <Linkedin className="h-12 w-12" style={{ color: themeColors.colors.pink[500] }} aria-hidden="true" />
+              </div>
+              <h3 id="linkedin-heading" className="text-xl font-semibold mb-2" style={{ color: themeColors.text.primary }}>LinkedIn</h3>
             </div>
-            <h3 id="linkedin-heading" className="text-xl font-semibold mb-2" style={{ color: themeColors.text.primary }}>LinkedIn</h3>
-            <a 
-              href={socialLinks.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Connect on LinkedIn at ${socialLinks.display.linkedin} (opens in new tab)`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors hover:opacity-80"
-              style={{
-                backgroundColor: themeColors.interactive.primary,
-                color: themeColors.text.pink
-              }}
-            >
-              Connect
-            </a>
-            <p className="text-xs mt-3" style={{ color: themeColors.text.tertiary }}>{socialLinks.display.linkedin}</p>
+            <div>
+              <a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Connect on LinkedIn at ${socialLinks.display.linkedin} (opens in new tab)`}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors hover:opacity-80 w-full justify-center"
+                style={{
+                  backgroundColor: themeColors.interactive.primary,
+                  color: themeColors.text.pink
+                }}
+              >
+                Connect
+              </a>
+              <p className="text-xs mt-3 break-all" style={{ color: themeColors.text.tertiary }}>{socialLinks.display.linkedin}</p>
+            </div>
+          </article>
+
+          {/* Instagram Card */}
+          <article className="rounded-lg shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300 flex flex-col justify-between" style={{ backgroundColor: themeColors.card.background }} aria-labelledby="instagram-heading">
+            <div>
+              <div className="flex justify-center mb-4">
+                <Instagram className="h-12 w-12" style={{ color: themeColors.colors.pink[500] }} aria-hidden="true" />
+              </div>
+              <h3 id="instagram-heading" className="text-xl font-semibold mb-2" style={{ color: themeColors.text.primary }}>Instagram</h3>
+            </div>
+            <div>
+              <a
+                href="https://www.instagram.com/aymardyanti?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Connect on Instagram @aymardyanti (opens in new tab)"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors hover:opacity-80 w-full justify-center"
+                style={{
+                  backgroundColor: themeColors.interactive.primary,
+                  color: themeColors.text.pink
+                }}
+              >
+                Follow Me
+              </a>
+              <p className="text-xs mt-3 break-all" style={{ color: themeColors.text.tertiary }}>@aymardyanti</p>
+            </div>
           </article>
 
         </section>

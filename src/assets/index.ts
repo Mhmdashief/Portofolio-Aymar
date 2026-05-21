@@ -21,7 +21,7 @@ const aboutMeJournal = aboutMeJournalPng;
 export * from './stars';
 export * from './stickers';
 export * from './project_icons';
-export * from './techstack';
+// export * from './techstack';
 
 // Export main assets
 export const mainAssets = {

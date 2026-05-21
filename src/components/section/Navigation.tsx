@@ -16,9 +16,9 @@ const Navigation = () => {
 
   const tabs = useMemo(() => [
     { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
-    { id: 'skills', label: 'Skills' }
+    { id: 'skills', label: 'Skills' },
+    { id: 'certifications', label: 'Certifications' }
   ], []);
 
   useEffect(() => {
@@ -105,19 +105,22 @@ const Navigation = () => {
       }}>
       <div className="nav-container">
         <button className="signature-name"
-          style={{ 
-            cursor: 'pointer', 
-            color: themeColors.colors.pink[500], 
-            background: 'none', 
+          style={{
+            cursor: 'pointer',
+            color: themeColors.colors.pink[500],
+            background: 'none',
             border: 'none',
             outline: 'none',
-            WebkitTextFillColor: themeColors.colors.pink[500]
+            WebkitTextFillColor: themeColors.colors.pink[500],
+            fontFamily: "'Dancing Script', cursive",
+            fontWeight: 700,
+            fontSize: '2.4rem'
           }}
           onClick={() => window.location.href = '/'}
           aria-label="Your Name - Go to homepage">
-          Your Name
+          Welcome To My Portofolio
         </button>
-        
+
         {/* Desktop Navigation */}
         <div className="nav-tabs desktop-nav">
           {tabs.map((tab) => (
@@ -207,9 +210,9 @@ const Navigation = () => {
             style={{
               background: activeTab === tab.id
                 ? withAlpha(
-                    isDarkMode ? themeColors.colors.pink[50] : themeColors.colors.pink[50],
-                    isDarkMode ? 0.05 : 0.8
-                  )
+                  isDarkMode ? themeColors.colors.pink[50] : themeColors.colors.pink[50],
+                  isDarkMode ? 0.05 : 0.8
+                )
                 : 'none',
               border: activeTab === tab.id
                 ? `1px solid ${themeColors.colors.pink[200]}`

@@ -13,7 +13,6 @@ import './App.css'
 const Contact = lazy(() => import('./pages/Contact'))
 
 // Lazy load below-the-fold components for better initial load
-const Projects = lazy(() => import('./components/section/Projects'))
 const Experience = lazy(() => import('./components/section/Experience'))
 const Skills = lazy(() => import('./components/section/Skills'))
 const Certifications = lazy(() => import('./components/section/Certifications'))
@@ -26,9 +25,6 @@ function HomePage() {
   return (
     <>
       <About />
-      <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
-        <Projects />
-      </Suspense>
       <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading...</div>}>
         <Experience />
       </Suspense>
