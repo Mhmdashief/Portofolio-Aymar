@@ -1,7 +1,6 @@
 import { useDarkMode } from '../contexts/DarkModeContext';
 import { useThemeColors } from '../hooks/useThemeColors';
 import { FileText, ArrowUp, Phone, Instagram } from 'lucide-react';
-import { socialLinks } from '../config/socialLinks';
 
 const Footer = () => {
   const { isDarkMode } = useDarkMode();

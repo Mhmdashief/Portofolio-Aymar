@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Github, Linkedin, Phone, Instagram } from 'lucide-react';
+import { Mail, Linkedin, Phone, Instagram } from 'lucide-react';
 import { useDarkMode } from '../contexts/DarkModeContext';
 import { useThemeColors } from '../hooks/useThemeColors';
 import Aurora from '../components/ui/aurora';
