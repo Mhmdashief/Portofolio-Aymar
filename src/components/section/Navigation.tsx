@@ -113,8 +113,7 @@ const Navigation = () => {
             outline: 'none',
             WebkitTextFillColor: themeColors.colors.pink[500],
             fontFamily: "'Dancing Script', cursive",
-            fontWeight: 700,
-            fontSize: '2.4rem'
+            fontWeight: 700
           }}
           onClick={() => window.location.href = '/'}
           aria-label="Your Name - Go to homepage">
@@ -154,7 +153,6 @@ const Navigation = () => {
             borderRadius: '12px',
             cursor: 'pointer',
             padding: '10px',
-            display: 'none',
             color: themeColors.colors.pink[500],
             transition: 'all 0.3s ease'
           }}

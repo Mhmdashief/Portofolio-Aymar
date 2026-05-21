@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '400px',
+      },
       animation: {
         'fade-in': 'fadeIn 1s ease-in-out',
         'bounce': 'bounce 2s infinite',

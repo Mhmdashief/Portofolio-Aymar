@@ -171,7 +171,7 @@ body {
 
 /* Mobile menu button - hidden by default */
 .mobile-menu-btn {
-  display: none !important;
+  display: none;
 }
 
 .dark .navigation {
@@ -207,21 +207,23 @@ body {
 
 .signature-name {
   font-family: 'Punk Babe', sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.2rem, 5vw + 0.5rem, 2.4rem);
   background: linear-gradient(135deg, var(--color-pink-500) 0%, var(--color-pink-600) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: var(--color-pink-500);
   margin: 0;
   font-weight: normal;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   filter: drop-shadow(0 2px 4px rgba(200, 139, 149, 0.3));
-  flex-shrink: 0;
-  line-height: 1;
+  flex-shrink: 1;
+  line-height: 1.2;
   padding-top: 0.2rem;
   /* Button reset styles for accessibility */
   padding: 0.2rem 0 0 0;
   text-align: left;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Apply gradient text effect only when supported */
@@ -631,7 +633,7 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .signature-name {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 5vw + 0.5rem, 1.8rem);
   }
   
   .main-content {

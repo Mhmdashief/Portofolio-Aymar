@@ -22,8 +22,7 @@ const AsciiMorphText: React.FC<AsciiMorphTextProps> = ({ text }) => {
       const span = document.createElement('span');
       span.textContent = letter;
       span.style.opacity = '0';
-      span.style.display = 'inline-block';
-      span.style.minWidth = letter === ' ' ? '0.3em' : 'auto';
+      span.style.display = 'inline';
       containerRef.current?.appendChild(span);
     });
     
@@ -62,6 +61,7 @@ const AsciiMorphText: React.FC<AsciiMorphTextProps> = ({ text }) => {
         fontFamily: 'monospace',
         letterSpacing: '0.05em',
         textAlign: 'left',
+        whiteSpace: 'pre-wrap',
         margin: '0.5rem 0',
         textShadow: `0 0 15px ${colors.effects.glow}`,
       }}
