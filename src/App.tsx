@@ -16,6 +16,7 @@ const Contact = lazy(() => import('./pages/Contact'))
 const Experience = lazy(() => import('./components/section/Experience'))
 const Skills = lazy(() => import('./components/section/Skills'))
 const Certifications = lazy(() => import('./components/section/Certifications'))
+const CreativePortfolio = lazy(() => import('./components/section/CreativePortfolio'))
 const Footer = lazy(() => import('./components/Footer'))
 
 function HomePage() {
@@ -74,6 +75,9 @@ function HomePage() {
       </Suspense>
       <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading...</div>}>
         <Certifications />
+      </Suspense>
+      <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading...</div>}>
+        <CreativePortfolio />
       </Suspense>
     </>
   )

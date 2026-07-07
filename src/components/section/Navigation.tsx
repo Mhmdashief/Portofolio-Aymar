@@ -18,7 +18,8 @@ const Navigation = () => {
     { id: 'about', label: 'About' },
     { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
-    { id: 'certifications', label: 'Certifications' }
+    { id: 'certifications', label: 'Certifications' },
+    { id: 'creative-portfolio', label: 'Portofolio PDF' }
   ], []);
 
   useEffect(() => {
