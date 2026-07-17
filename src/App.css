@@ -797,3 +797,38 @@ body {
     transform: translateX(0);
   }
 }
+
+/* ── About Section: Profile Photo Glow ── */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(200, 139, 149, 0.4),
+      0 0 50px rgba(124, 58, 237, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 36px rgba(200, 139, 149, 0.7),
+      0 0 80px rgba(124, 58, 237, 0.3);
+  }
+}
+
+/* ── Resume Button: Shimmer sweep ── */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+/* ── Resume Button: Gradient shift ── */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Available dot pulse ── */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}

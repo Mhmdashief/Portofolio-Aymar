@@ -8,10 +8,6 @@ import About from './components/section/About'
 import { divider } from './assets'
 import './App.css'
 
-// Lazy load project pages - add your project page imports here
-// Example: const MyProject = lazy(() => import('./pages/projects/MyProject'))
-const Contact = lazy(() => import('./pages/Contact'))
-
 // Lazy load below-the-fold components for better initial load
 const Experience = lazy(() => import('./components/section/Experience'))
 const Skills = lazy(() => import('./components/section/Skills'))
@@ -95,7 +91,6 @@ function AppContent() {
           <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/contact" element={<Contact />} />
               {/* Add your project routes here */}
               {/* Example: <Route path="/projects/my-project" element={<MyProject />} /> */}
             </Routes>
