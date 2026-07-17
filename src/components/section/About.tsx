@@ -348,7 +348,7 @@ const About = () => {
               {/* ── End Contact Cards ── */}
 
               {/* ── CTA Buttons ── */}
-              <div className="mt-0 flex flex-col sm:flex-row items-center gap-3 w-full justify-center sm:justify-start">
+              <div className="mt-4 sm:mt-0 flex flex-col sm:flex-row items-center gap-3 w-full justify-center sm:justify-start">
                 {/* Resume — highly highlighted */}
                 <button
                   id="resume-btn"
